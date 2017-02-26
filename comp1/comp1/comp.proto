@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.kc.comp1";
+option java_outer_classname = "Comp1Proto";
+
+package comp1;
+
+service Module {
+  rpc Fetch (Request) returns (Response) {}
+  rpc Execute(ExecuteRequest) returns (ExecuteResponse) {}
+}
+
+message Request {}
+
+message ExecuteRequest {
+  string type = 1;
+  string componentName = 2;
+}
+
+message ExecuteResponse {
+
+}
+
+message Component {
+    string name = 1;
+    string type = 2;
+}
+
+message Response {
+  repeated Component component = 1;
+}

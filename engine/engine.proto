@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.kc.engine";
+option java_outer_classname = "EngineProto";
+
+package engine;
+
+service Engine {
+  rpc Register (EngineRequest) returns (EngineResponse) {}
+}
+
+message EngineRequest {
+  string uniqueNumber = 1;
+  string url = 2;
+}
+
+message EngineResponse {
+
+}
